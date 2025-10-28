@@ -1,0 +1,106 @@
+/* ----- Reset & Base Styles ----- */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: 'Poppins', sans-serif;
+}
+
+body {
+  background: linear-gradient(135deg, #ff9a9e, #fad0c4);
+  height: 100vh;
+  overflow: hidden;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+}
+
+h1 {
+  font-size: 60px;
+  color: white;
+  text-shadow: 0 0 20px #fff, 0 0 40px #ff69b4, 0 0 60px #ff1493;
+  animation: glow 2s infinite alternate;
+}
+
+@keyframes glow {
+  from { text-shadow: 0 0 10px #fff, 0 0 20px #ff69b4; }
+  to { text-shadow: 0 0 30px #fff, 0 0 60px #ff1493; }
+}
+
+p {
+  font-size: 24px;
+  color: #fff;
+  margin-top: 10px;
+  text-align: center;
+  max-width: 600px;
+  line-height: 1.5;
+}
+
+/* ----- Balloons ----- */
+.balloon {
+  position: absolute;
+  bottom: -150px;
+  width: 60px;
+  height: 80px;
+  background: radial-gradient(circle at 30% 30%, #fff, transparent),
+              linear-gradient(to bottom, #ff4b1f, #ff9068);
+  border-radius: 50% 50% 50% 50% / 60% 60% 40% 40%;
+  animation: floatUp 10s infinite ease-in;
+}
+
+@keyframes floatUp {
+  0% {
+    transform: translateY(0) rotate(0deg);
+    opacity: 1;
+  }
+  100% {
+    transform: translateY(-110vh) rotate(360deg);
+    opacity: 0;
+  }
+}
+
+.string {
+  width: 2px;
+  height: 60px;
+  background: #fff;
+  position: absolute;
+  top: 80px;
+  left: 50%;
+  transform: translateX(-50%);
+}
+
+/* ----- Confetti ----- */
+.confetti {
+  position: fixed;
+  top: 0;
+  width: 10px;
+  height: 10px;
+  background-color: red;
+  opacity: 0.7;
+  animation: fall 5s linear infinite;
+}
+
+@keyframes fall {
+  0% { transform: translateY(-10px) rotate(0deg); }
+  100% { transform: translateY(100vh) rotate(720deg); }
+}
+
+/* ----- Button ----- */
+button {
+  background: #ff4b1f;
+  border: none;
+  padding: 15px 30px;
+  border-radius: 30px;
+  color: white;
+  font-size: 18px;
+  margin-top: 20px;
+  cursor: pointer;
+  box-shadow: 0 0 20px #ff1493;
+  transition: 0.3s;
+}
+
+button:hover {
+  background: #ff9068;
+  transform: scale(1.1);
+}
